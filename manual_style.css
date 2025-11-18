@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    background: #f4f7fb;
+    color: #111;
+    line-height: 1.6;
+}
+
+.manualencabezado {
+    background-color: #f7931e;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manualencabezado h1 {
+    color: aliceblue;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.enlaceprincipal {
+    display: block;
+    text-align: center;
+    padding: 10px 0 20px 0;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.enlaceprincipal:hover {
+    color: #111;
+}
+
+.manualcontenedor {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cajafull {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 100%;
+}
+
+.cajamitad {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(50% - 20px); 
+    min-width: 300px; 
+}
+
+.cajafull h2,
+.cajamitad h2 {
+    color: #f7931e;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: none;
+}
+
+.cajafull p,
+.cajamitad p {
+    margin-bottom: 10px;
+    text-align: justify;
+    padding-left: 20px; 
+    font-size: 16px;
+}
+
+.cajafull ul,
+.cajamitad ul {
+    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.cajafull ul li,
+.cajamitad ul li {
+    margin-bottom: 8px;
+    padding-left: 20px; 
+    position: relative;
+    font-size: 16px;
+}
+
+.cajafull ul li:before,
+.cajamitad ul li:before {
+    content: "—"; 
+    color: #f7931e;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.contenedorimagen {
+    text-align: center;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.imagenmanual {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+.piepaginafinal {
+    background-color: #f7931e;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.piepaginaderechos {
+    color: #ffffff;
+    font-size: 0.9em; 
+    text-align: center;
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .manualencabezado {
+        padding: 15px 10px;
+    }
+    
+    .manualcontenedor {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .cajafull,
+    .cajamitad {
+        padding: 20px;
+        margin: 0;
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+}
