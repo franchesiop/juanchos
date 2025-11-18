@@ -32,6 +32,8 @@ body {
 .imagen-banner {
   width: 90px;
   height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 h1 {
@@ -73,8 +75,9 @@ h1 {
 }
 .cajap:hover {
   transform: translateY(-10px);
-  background-color: #fef3e6;
   box-shadow: 0 8px 15px #999999;
+  background-color: #f7931e;
+  color: white;
 }
 
 .caja {
@@ -96,16 +99,20 @@ h1 {
 }
 .caja:hover {
   transform: translateY(-10px);
-  background-color: #fef3e6;
+  background-color: #f7931e;
   box-shadow: 0 8px 15px #999999;
+  color: white;
+}
+.caja:hover .ingredientes {
+    color: white; 
 }
 .titulop {
   text-align: center;
 }
 
 .imagen-caja {
-  width: 160px;
-  height: 160px;
+  width: 225px;
+  height: 225px;
   border-radius: 20px;
   object-fit: cover;
   display: block;
@@ -139,6 +146,12 @@ h1 {
     align-items: center;
     gap: 15px;
 }
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
 .ingredientes {
     font-size: 0.95em;
     color: #444;
@@ -154,13 +167,13 @@ h1 {
   font-weight: bold;
 }
 .footer-copyright {
-    color: #ffffff;
-    font-size: 0.9em; 
-    text-align: center;
-    width: 100%;
-    margin-top: 15px; 
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 0.9em; 
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 .parrafo {
   font-family: system-ui, Arial, sans-serif;
