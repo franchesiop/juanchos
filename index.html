@@ -3,119 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>juanchos</title>
+    <title>Juancho's | Hamburguesas & Más</title>
+    <!-- Fuentes Google Fonts --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="banner-titulo">
-  <div class="lado-izquierdo">
-    <img src="imagenes\logologuito.png" alt="Logo" class="imagen-banner">
-    <h1>Juancho's</h1>
-  </div>
-  <nav class="menu-nav">
-  <input type="checkbox" id="menuToggle">
-  <label for="menuToggle" class="menu-icon">☰</label>
-    <ul class="menu-list">
-      <li><a href="https://wa.me/+584243371838" target="_blank">Contáctanos</a></li>
-       <li><a href="#menu">Menú</a></li>
-      <li><a href="#horyubi">Horario y Ubicación</a></li>
-      <li><a href="#sobren">Sobre Nosotros</a></li>
-      <li><a href="#redes">Redes Sociales</a></li>
-      <li><a href="manual.html">Manual de Usuario</a></li>
-    </ul>
-  </nav>
-</header>
-    </div>
-    <div class="containerp">
-        <div class="cajap">
-            <h2 class="titulop">Bienvenido a Juancho's</h2>
-            <p class="parrafo">El mejor lugar para comer</p>
-            <br>
-            <img src="imagenes\delivery.png" alt="delivery" class="imagenp">
-            <img src="imagenes\nuevaburguer.png" alt="nuevab" class="imagenp">
-    </div>
-        </div>
-         <h2 id="menu" class="titulop">Nuestro Menú</h2>
- <div class="container">
-        <div class="caja">
-        <h2>Hamburguesa <br> Clásica</h2>
-        <p class="ingredientes">
-            Pan, Queso Mozzarella, Tomate, Cebolla Blanca, Lechuga. <br>
-            Salsas: Tomate, Mayonesa, Mostaza. <br>
-            Incluye 100g de Papas Naturales.
-        </p>
-        <img src="imagenes\especial.png" alt="comida" class="imagen-caja">
-      </div>
-         <div class="caja">
-        <h2>Hamburguesa <br> Especial</h2>
-        <p class="ingredientes">
-            Pan, Queso Cheddar, Tomate, Cebolla Morada, Lechuga, Tocineta Ahumada. <br>
-            Salsas: Tomate, Mayonesa, Mostaza. <br>
-            Incluye 100g de Papas Naturales.
-        </p>
-        <img src="imagenes\clasica.png" alt="comida" class="imagen-caja">
-      </div>
-         <div class="caja">
-        <h2>Papas <br>Juancho's</h2>
-        <p class="ingredientes">
-            300 gramos de Papas Fritas Naturales. <br>
-            Toppings: Tocineta y Queso Cheddar.
-        </p>  
-        <img src="imagenes\papasjuanchos_1.png" alt="comida" class="imagen-caja">
-      </div>
-        <div class="caja">
-        <h2>Tequeños</h2>
-        <p class="ingredientes">
-            Deliciosos Tequeños rellenos de Queso.
-        </p>  
-        <img src="imagenes\tequeteque_1.png" alt="comida" class="imagen-caja">
-      </div>
-    </div>
-   <h2 id="horyubi" class="titulop">Nuestro Horario y Ubicación</h2>
-<div class="containerp doble">
-    <div class="cajap">
-        <h3>Horario</h3>
-        <img src="imagenes\horariojuanchos.png" alt="jjj" class="imagenp">
-    </div>
-    <div class="cajap">
-        <h3>Ubicación</h3>
-        <a href="https://maps.app.goo.gl/7oR8A6ikcrKE9ZK86" target="_blank">
-        <img src="imagenes\sslugar.jpg" alt="ubiimg" class="imagenp">
+
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+  <header class="navbar-header">
+    <div class="navbar-container">
+      <a href="#inicio" class="logo-brand">
+        <img src="imagenes/logologuito.png" alt="Logo Juancho's" class="logo-img">
+        <span class="brand-name">JUANCHO'S</span>
+      </a>
+
+      <nav class="nav-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle" class="menu-icon">&#9776;</label>
+        
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#menu" class="nav-link">Menú</a></li>
+          <li><a href="#horyubi" class="nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contacto y Redes -->
+      <div class="header-contact">
+        <a href="https://wa.me/+584243371838" target="_blank" class="btn-whatsapp-header" title="Contáctanos por WhatsApp">
+          <img src="imagenes/wsicon.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/juanchos_2024" target="_blank" class="btn-ig-header" title="Instagram">
+          <img src="imagenes/igicon.png" alt="Instagram">
         </a>
       </div>
-</div>
-<h2 id="sobren" class="titulop">Sobre Nosotros</h2>
-<div class="containerp">
-  <div class="cajap">
-    <p class="parrafo">
-      En Juancho's nos dedicamos a ofrecer la mejor experiencia de comida en un ambiente familiar y acogedor.  
-      Nacimos con la idea de combinar ingredientes frescos con un toque casero, brindando un sabor que nos distingue.  
-      Nuestro compromiso es servirte siempre con calidad, atención y pasión por lo que hacemos.
-    </p>
-    <br>
-    <div class="galeria">
-      <img src="imagenes\1.png" alt="localimagen" class="imagenp">
-      <img src="imagenes\2.png" alt="localimagen3" class="imagenp">
-      <img src="imagenes\3.png" alt="localimagen2" class="imagenp">
     </div>
-  </div>
-</div>
-    <footer class="container-final">
-        <h2 id="redes" class="titulo-final">Contáctanos</h2>
-        <div class="redes-sociales">
-        <a href="https://wa.me/+584243371838" target="_blank">
-        <img src="imagenes/wsicon.png" alt="logowhatsapp" class="imagen-final">
-  </a>
-        <a href="https://www.instagram.com/juanchos_2024?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-        <img src="imagenes/igicon.png" alt="logoig" class="imagen-final">
-    </a>
+  </header>
+
+  <main>
+    <!-- SECCIÓN BIENVENIDA / HERO -->
+    <section id="inicio" class="hero-section" data-section="inicio">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-subtitle">SABOR CASERO Y ARTESANAL</span>
+          <h1 class="hero-title">BUENOS MOMENTOS CON GRANDES SABORES</h1>
+          <p class="hero-description">
+            Especialistas en las mejores hamburguesas y antojos recién hechos. Un rincón familiar donde la calidad y la buena atención nunca faltan.
+          </p>
+          <div class="hero-info-badge">
+            <span class="clock-icon">🕒</span> Viernes a Domingo: 6:00 PM - 11:00 PM
+          </div>
+          <div class="hero-buttons">
+            <a href="https://wa.me/+584243371838" target="_blank" class="btn-primary">Pedir por WhatsApp</a>
+            <a href="#quienes-somos" class="btn-secondary">Conócenos</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="imagenes/nuevaburguer.png" alt="Hamburguesa Especial Juancho's" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN QUIÉNES SOMOS (ZIG-ZAG) -->
+    <section id="quienes-somos" class="seccion-zigzag" data-section="quienes-somos">
+      <div class="zigzag-container">
+        <div class="zigzag-text">
+          <h2 class="section-title">NUESTRA HISTORIA</h2>
+          <h3 class="section-subtitle">Hecho en familia, servido con pasión</h3>
+          <p class="parrafo">
+            <strong>Juancho's</strong> nació del sueño compartido entre padre e hijo de crear un espacio donde comer sabroso se sintiera como estar en casa. 
+          </p>
+          <p class="parrafo">
+            Aunque somos un equipo pequeño, le ponemos corazón a cada detalle: desde la selección de ingredientes frescos hasta la preparación de nuestras hamburguesas, papas cargadas y especialidades. ¡Aquí no solo vendemos comida, preparamos momentos para compartir!
+          </p>
+        </div>
+        <div class="zigzag-media">
+          <img src="imagenes/delivery.png" alt="Nuestra preparación y servicio" class="media-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN MENÚ INTERACTIVO (GRID / CATÁLOGO) -->
+    <section id="menu" class="seccion-menu" data-section="menu">
+      <div class="menu-container">
+        
+        <div class="menu-header-text">
+          <h2 class="section-title">NUESTRO MENÚ</h2>
+          <h3 class="section-subtitle">Sabor artesanal preparado al momento</h3>
+        </div>
+
+        <!-- Tarjetas del Menú -->
+        <div class="menu-grid">
+
+          <!-- Platillo 1 -->
+          <article class="card-platillo" data-id="1">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Hamburguesa Especial" class="card-img">
+              <span class="badge-categoria">Hamburguesas</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Hamburguesa Especial</h4>
+              <p class="card-desc-corta">Queso Cheddar, tocineta ahumada y vegetales frescos.</p>
+              <div class="card-footer-info">
+                <span class="card-price">$6.00</span>
+                <button class="btn-ver-mas">Ver detalles &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 2 -->
+          <article class="card-platillo" data-id="2">
+            <div class="card-img-wrapper">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ6YqQwx5ZKYy3AyXjr9nQlyvD6agyfaI24xXa-v6bkg&s=10" alt="Papas Juancho's" class="card-img">
+              <span class="badge-categoria">Papas & Entradas</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Papas Juancho's</h4>
+              <p class="card-desc-corta">300g de papas crujientes bañadas en cheddar y tocineta.</p>
+              <div class="card-footer-info">
+                <span class="card-price">$4.50</span>
+                <button class="btn-ver-mas">Ver detalles &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Platillo 3 -->
+          <article class="card-platillo" data-id="3">
+            <div class="card-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80" alt="Tequeños de Queso" class="card-img">
+              <span class="badge-categoria">Entradas</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Tequeños Crujientes</h4>
+              <p class="card-desc-corta">6 unidades rellenas con generoso queso blanco frito.</p>
+              <div class="card-footer-info">
+                <span class="card-price">$3.50</span>
+                <button class="btn-ver-mas">Ver detalles &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventana Emergente (Modal) -->
+    <div id="modal-platillo" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+        
+        <div class="modal-grid">
+          <div class="modal-media">
+            <img id="modal-img-principal" src="" alt="Platillo detalle" class="modal-img-main">
+          </div>
+
+          <div class="modal-info">
+            <span id="modal-categoria" class="badge-categoria">Categoría</span>
+            <h3 id="modal-titulo" class="modal-title">Título Platillo</h3>
+            <span id="modal-precio" class="modal-price">$0.00</span>
+            
+            <div class="modal-ingredientes-wrapper">
+              <h4>🧀 Ingredientes & Preparación:</h4>
+              <p id="modal-ingredientes">Aquí se cargarán los ingredientes completos del plato seleccionado.</p>
+            </div>
+
+            <a href="https://wa.me/+584243371838" target="_blank" class="btn-primary modal-btn-pedir">
+              Pedir este plato por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-copyright">
-        <p>&copy; 2025 Juancho's. Todos los derechos reservados.</p>
+
+    <!-- SECCIÓN GALERÍA DE CLIENTES (ZIG-ZAG INVERSO) -->
+    <section id="clientes" class="seccion-zigzag inverso" data-section="clientes">
+      <div class="zigzag-container">
+        <div class="zigzag-media">
+          <div class="galeria-grid">
+            <img src="imagenes/1.png" alt="Cliente disfrutando en Juancho's" class="galeria-img">
+            <img src="imagenes/2.png" alt="Ambiente en Juancho's" class="galeria-img">
+            <img src="imagenes/3.png" alt="Fotos de la casa" class="galeria-img">
+          </div>
+        </div>
+        <div class="zigzag-text">
+          <h2 class="section-title">LA EXPERIENCIA JUANCHO'S</h2>
+          <h3 class="section-subtitle">Nuestra mejor garantía son sus sonrisas</h3>
+          <p class="parrafo">
+            Cada cliente que nos visita se convierte en parte de nuestra familia. Nos encanta ser el punto de encuentro para amigos, familias y amantes de la buena comida.
+          </p>
+          <p class="parrafo">
+            ¡Ven a visitarnos o pide a domicilio para vivir la verdadera experiencia de un sabor casero único!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HORARIO Y UBICACIÓN (ZIG-ZAG CON TARJETAS RESTRUCTURADAS) -->
+    <section id="horyubi" class="seccion-zigzag" data-section="horyubi">
+      <div class="zigzag-container">
+        <div class="zigzag-text">
+          <h2 class="section-title">DÓNDE ENCONTRARNOS</h2>
+          <h3 class="section-subtitle">Visítanos o pide tu delivery</h3>
+          
+          <div class="info-box">
+            <h4>📍 UBICACIÓN</h4>
+            <p>Haz clic en el mapa para abrir la ruta en Google Maps y llegar directo a nuestro local.</p>
+          </div>
+
+          <div class="info-box">
+            <h4>⏰ HORARIO DE ATENCIÓN</h4>
+            <p>Revisa nuestros días de apertura en la imagen de la derecha para no quedarte con las ganas.</p>
+          </div>
+        </div>
+
+        <div class="zigzag-media doble-media">
+          <img src="imagenes/horariojuanchos.png" alt="Horario de atención">
+          <a href="https://maps.app.goo.gl/7oR8A6ikcrKE9ZK86" target="_blank" rel="noopener">
+            <img src="imagenes/sslugar.jpg" alt="Mapa de Ubicación Juancho's">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FINAL -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>JUANCHO'S</h3>
+        <p>El mejor lugar para comer en familia.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://wa.me/+584243371838" target="_blank"><img src="imagenes/wsicon.png" alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/juanchos_2024" target="_blank"><img src="imagenes/igicon.png" alt="Instagram"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Juancho's. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
