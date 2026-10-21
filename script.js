@@ -5,34 +5,53 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ------------------------------------------
-     1. INDICADOR DEL MENÚ ACTIVO SEGÚN EL SCROLL
+     1. INDICADOR DEL MENÚ ACTIVO SEGÚN EL SCROLL (SIN LIMBOS)
      ------------------------------------------ */
   const secciones = document.querySelectorAll('section[data-section]');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  // Mapeo de secciones al ID del enlace en la barra superior
+  const mapaSecciones = {
+    'inicio': 'inicio',
+    'quienes-somos': 'inicio',
+    'menu': 'menu',
+    'clientes': 'menu',
+    'horyubi': 'horyubi'
+  };
+
   function actualizarMenuActivo() {
-    let seccionActualId = '';
-    const scrollPosicion = window.scrollY + 150; // Offset para detectar la sección antes de tocar el borde superior
+    let seccionActualId = 'inicio'; // Valor por defecto
+    const scrollPosicion = window.scrollY + 200; // Offset cómodo para detectar la sección activa
 
-    secciones.forEach(seccion => {
-      const topSeccion = seccion.offsetTop;
-      const altoSeccion = seccion.offsetHeight;
+    // Si el usuario llega al fondo total de la página, forzar activación de la última sección (Ubicación)
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      seccionActualId = 'horyubi';
+    } else {
+      secciones.forEach(seccion => {
+        const topSeccion = seccion.offsetTop;
+        const altoSeccion = seccion.offsetHeight;
 
-      if (scrollPosicion >= topSeccion && scrollPosicion < topSeccion + altoSeccion) {
-        seccionActualId = seccion.getAttribute('id');
-      }
-    });
+        if (scrollPosicion >= topSeccion && scrollPosicion < topSeccion + altoSeccion) {
+          seccionActualId = seccion.getAttribute('id');
+        }
+      });
+    }
 
+    // Determinar a qué botón del menú le corresponde esta sección
+    const enlaceActivoId = mapaSecciones[seccionActualId] || 'inicio';
+
+    // Actualizar clases activas en los enlaces del navbar
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${seccionActualId}`) {
+      if (link.getAttribute('href') === `#${enlaceActivoId}`) {
         link.classList.add('active');
       }
     });
   }
 
-  // Escuchar el evento de scroll
+  // Escuchar el evento de scroll y ejecutar una vez al cargar
   window.addEventListener('scroll', actualizarMenuActivo);
+  actualizarMenuActivo();
 
 
   /* ------------------------------------------
@@ -44,21 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
     1: {
       titulo: "Hamburguesa Especial",
       categoria: "Hamburguesas",
-      precio: "$6.00",
+      precio: "$4.50",
       ingredientes: "Pan brioche artesanal tostado con mantequilla, 150g de carne jugosa de res, Doble Queso Cheddar fundido, Tocineta Ahumada crujiente, Lechuga fresca, Tomate y Cebolla Morada. Acompañada de salsas de la casa y 100g de papas naturales.",
       imagen: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
     },
     2: {
       titulo: "Papas Juancho's",
       categoria: "Papas & Entradas",
-      precio: "$4.50",
+      precio: "$2.50",
       ingredientes: "300g de papas fritas naturales doradas al punto exacto, bañadas en abundante salsa fundida de Queso Cheddar y trozos crujientes de tocineta ahumada artesanal.",
       imagen: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=600&q=80"
     },
     3: {
       titulo: "Tequeños Crujientes",
       categoria: "Entradas",
-      precio: "$3.50",
+      precio: "$3.00",
       ingredientes: "6 unidades de tequeños de masa suave y crujiente, super rellenos de queso blanco fundido de alta calidad. Ideales para compartir como entrada.",
       imagen: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80"
     }
