@@ -8,7 +8,8 @@
   <meta name="theme-color" content="#1a110b">
   <meta property="og:title" content="Juancho's | Hamburguesas, papas y tequeños">
   <meta property="og:description" content="Sabor casero y artesanal, hecho en familia. Pide por WhatsApp.">
-  <meta property="og:image" content="imagenes/nuevaburguer.png">
+  <!-- NOTA: Imagen temporal mientras se renueva el negocio y se toman las fotos reales -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80">
   <link rel="icon" href="imagenes/logologuito.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,7 +78,8 @@
 
         <div class="hero__visual">
           <div class="hero__disco" aria-hidden="true"></div>
-          <img class="hero__burger" src="imagenes/nuevaburguer.png" alt="Hamburguesa especial de Juancho's" width="600" height="600" fetchpriority="high">
+          <!-- NOTA: Imagen temporal mientras se renueva el negocio y se toman las fotos reales -->
+          <img class="hero__burger" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80" alt="Hamburguesa especial de Juancho's" width="600" height="600" fetchpriority="high">
 
           <div class="sello" aria-hidden="true">
             <svg class="sello__svg" viewBox="0 0 200 200">
@@ -109,7 +111,8 @@
           </p>
         </div>
         <figure class="foto-inclinada">
-          <img src="imagenes/delivery.png" alt="Preparación y entrega de pedidos en Juancho's" loading="lazy" width="800" height="600">
+          <!-- NOTA: Imagen temporal mientras se renueva el negocio y se toman las fotos reales -->
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" alt="Preparación y entrega de pedidos en Juancho's" loading="lazy" width="800" height="600">
         </figure>
       </div>
     </section>
@@ -122,9 +125,18 @@
           <p class="subtitulo">Sabor artesanal, preparado al momento.</p>
         </header>
 
+        <div class="filtros" role="group" aria-label="Filtrar el menú por categoría">
+          <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filtro" data-filtro="hamburguesas" aria-pressed="false">Hamburguesas</button>
+          <button type="button" class="filtro" data-filtro="entradas" aria-pressed="false">Papas y entradas</button>
+          <button type="button" class="filtro" data-filtro="pizzas" aria-pressed="false">Pizzas</button>
+          <button type="button" class="filtro" data-filtro="perros" aria-pressed="false">Perros</button>
+        </div>
+
+        <!-- NOTA: Imágenes referenciales temporales en el menú mientras se renueva el negocio -->
         <div class="carta">
 
-          <article class="plato plato--destacado">
+          <article data-cat="hamburguesas" class="plato plato--destacado">
             <div class="plato__foto">
               <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Hamburguesa especial con queso cheddar y tocineta" loading="lazy" width="900" height="600">
             </div>
@@ -132,25 +144,25 @@
               <span class="plato__cat">Hamburguesas</span>
               <h3 class="plato__titulo">Hamburguesa Especial</h3>
               <p class="plato__desc">Queso cheddar, tocineta ahumada y vegetales frescos.</p>
-              <button type="button" class="plato__abrir" data-ingredientes="Pan brioche artesanal tostado con mantequilla, 150 g de carne jugosa de res, doble queso cheddar fundido, tocineta ahumada crujiente, lechuga fresca, tomate y cebolla morada. Acompañada de salsas de la casa y 100 g de papas naturales.">Ver ingredientes</button>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/hamburguesa-especial-2.jpg|imagenes/platos/hamburguesa-especial-3.jpg" data-ingredientes="Pan brioche artesanal tostado con mantequilla, 150 g de carne jugosa de res, doble queso cheddar fundido, tocineta ahumada crujiente, lechuga fresca, tomate y cebolla morada. Acompañada de salsas de la casa y 100 g de papas naturales.">Ver ingredientes</button>
             </div>
             <span class="plato__precio">$4.50</span>
           </article>
 
-          <article class="plato">
+          <article data-cat="entradas" class="plato">
             <div class="plato__foto">
-              <img src="https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=700&q=80" alt="Papas fritas bañadas en queso cheddar y tocineta" loading="lazy" width="700" height="600">
+              <img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?auto=format&fit=crop&w=700&q=80" alt="Papas fritas bañadas en queso cheddar y tocineta" loading="lazy" width="700" height="600">
             </div>
             <div class="plato__cuerpo">
               <span class="plato__cat">Papas y entradas</span>
               <h3 class="plato__titulo">Papas Juancho's</h3>
               <p class="plato__desc">300 g de papas crujientes bañadas en cheddar y tocineta.</p>
-              <button type="button" class="plato__abrir" data-ingredientes="300 g de papas fritas naturales, doradas al punto exacto, bañadas en abundante salsa fundida de queso cheddar y trozos crujientes de tocineta ahumada artesanal.">Ver ingredientes</button>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/papas-juanchos-2.jpg|imagenes/platos/papas-juanchos-3.jpg" data-ingredientes="300 g de papas fritas naturales, doradas al punto exacto, bañadas en abundante salsa fundida de queso cheddar y trozos crujientes de tocineta ahumada artesanal.">Ver ingredientes</button>
             </div>
             <span class="plato__precio">$2.50</span>
           </article>
 
-          <article class="plato">
+          <article data-cat="entradas" class="plato">
             <div class="plato__foto">
               <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80" alt="Tequeños de queso fritos" loading="lazy" width="700" height="600">
             </div>
@@ -158,9 +170,61 @@
               <span class="plato__cat">Entradas</span>
               <h3 class="plato__titulo">Tequeños Crujientes</h3>
               <p class="plato__desc">6 unidades rellenas con generoso queso blanco frito.</p>
-              <button type="button" class="plato__abrir" data-ingredientes="6 tequeños de masa suave y crujiente, rellenos de queso blanco fundido de alta calidad. Ideales para compartir como entrada.">Ver ingredientes</button>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/tequenos-2.jpg|imagenes/platos/tequenos-3.jpg" data-ingredientes="6 tequeños de masa suave y crujiente, rellenos de queso blanco fundido de alta calidad. Ideales para compartir como entrada.">Ver ingredientes</button>
             </div>
             <span class="plato__precio">$3.00</span>
+          </article>
+
+          <article data-cat="pizzas" class="plato">
+            <div class="plato__foto">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80" alt="Mini pizzas de Juancho's" loading="lazy" width="700" height="600">
+            </div>
+            <div class="plato__cuerpo">
+              <span class="plato__cat">Pizzas</span>
+              <h3 class="plato__titulo">Mini Pizzas</h3>
+              <p class="plato__desc">Masa suave, queso gratinado y salsa de la casa.</p>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/mini-pizzas-2.jpg|imagenes/platos/mini-pizzas-3.jpg" data-ingredientes="Masa artesanal suave, salsa de tomate de la casa, abundante queso mozzarella gratinado y orégano. Ideales para compartir o para un antojo individual.">Ver ingredientes</button>
+            </div>
+            <span class="plato__precio">$3.00</span>
+          </article>
+
+          <article data-cat="hamburguesas" class="plato">
+            <div class="plato__foto">
+              <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80" alt="Hamburguesa clásica de Juancho's" loading="lazy" width="700" height="600">
+            </div>
+            <div class="plato__cuerpo">
+              <span class="plato__cat">Hamburguesas</span>
+              <h3 class="plato__titulo">Hamburguesa Clásica</h3>
+              <p class="plato__desc">La de siempre: carne jugosa, queso y vegetales frescos.</p>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/hamburguesa-clasica-2.jpg|imagenes/platos/hamburguesa-clasica-3.jpg" data-ingredientes="Pan artesanal tostado, carne de res jugosa, queso amarillo, lechuga fresca, tomate y salsas de la casa.">Ver ingredientes</button>
+            </div>
+            <span class="plato__precio">$3.50</span>
+          </article>
+
+          <article data-cat="perros" class="plato">
+            <div class="plato__foto">
+              <img src="https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=700&q=80" alt="Perros calientes de Juancho's" loading="lazy" width="700" height="600">
+            </div>
+            <div class="plato__cuerpo">
+              <span class="plato__cat">Perros calientes</span>
+              <h3 class="plato__titulo">Perros Calientes</h3>
+              <p class="plato__desc">Salchicha jugosa en pan suave con todos sus toppings.</p>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/perros-calientes-2.jpg|imagenes/platos/perros-calientes-3.jpg" data-ingredientes="Pan suave, salchicha jugosa, repollo, cebolla, salsas de la casa y papitas trituradas por encima.">Ver ingredientes</button>
+            </div>
+            <span class="plato__precio">$2.00</span>
+          </article>
+
+          <article data-cat="hamburguesas" class="plato">
+            <div class="plato__foto">
+              <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=80" alt="Hamburguesa de pollo de Juancho's" loading="lazy" width="700" height="600">
+            </div>
+            <div class="plato__cuerpo">
+              <span class="plato__cat">Hamburguesas</span>
+              <h3 class="plato__titulo">Hamburguesa de Pollo</h3>
+              <p class="plato__desc">Pechuga crujiente, vegetales frescos y salsa especial.</p>
+              <button type="button" class="plato__abrir" data-extras="imagenes/platos/hamburguesa-pollo-2.jpg|imagenes/platos/hamburguesa-pollo-3.jpg" data-ingredientes="Pan artesanal tostado, pechuga de pollo empanizada y crujiente, lechuga, tomate y salsa especial de la casa.">Ver ingredientes</button>
+            </div>
+            <span class="plato__precio">$4.00</span>
           </article>
 
         </div>
@@ -192,7 +256,7 @@
       <div class="dos-col">
         <div class="texto">
           <h2 class="titulo">Dónde encontrarnos</h2>
-          <p>Visítanos en el local o pide tu delivery por WhatsApp.</p>
+          <p>Visítanos en el local o pide tu delivery por WhatsApp. Toca el mapa para ver la ruta.</p>
 
           <div class="ficha">
             <h3 class="ficha__titulo">Horario</h3>
@@ -200,11 +264,6 @@
             <p>De 6:00 pm a 11:00 pm</p>
           </div>
 
-          <div class="ficha">
-            <h3 class="ficha__titulo">Cómo llegar</h3>
-            <p>Toca el mapa para abrir la ruta en Google Maps.</p>
-            <a class="btn btn--oscuro" href="https://maps.app.goo.gl/7oR8A6ikcrKE9ZK86" target="_blank" rel="noopener">Abrir en Google Maps</a>
-          </div>
         </div>
 
         <a class="mapa" href="https://maps.app.goo.gl/7oR8A6ikcrKE9ZK86" target="_blank" rel="noopener" aria-label="Abrir la ubicación de Juancho's en Google Maps">
@@ -235,7 +294,12 @@
   <dialog id="detalle" class="detalle" aria-labelledby="detalle-titulo">
     <div class="detalle__caja">
       <button type="button" class="detalle__cerrar" aria-label="Cerrar">&times;</button>
-      <div class="detalle__foto"><img id="detalle-img" src="" alt=""></div>
+      <div class="detalle__foto" id="detalle-foto">
+        <img id="detalle-img" src="" alt="">
+        <button type="button" class="visor__btn visor__btn--prev" id="visor-prev" aria-label="Foto anterior">&#8249;</button>
+        <button type="button" class="visor__btn visor__btn--next" id="visor-next" aria-label="Foto siguiente">&#8250;</button>
+        <div class="visor__puntos" id="visor-puntos"></div>
+      </div>
       <div class="detalle__info">
         <span class="plato__cat" id="detalle-cat"></span>
         <h3 class="detalle__titulo" id="detalle-titulo"></h3>

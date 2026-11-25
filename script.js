@@ -134,6 +134,22 @@
   }
 
   /* ------------------------------------------
+     Filtros del menú (se ven solo en teléfono)
+     ------------------------------------------ */
+  const botonesFiltro = $$('.filtro');
+  botonesFiltro.forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const filtro = boton.dataset.filtro;
+      botonesFiltro.forEach((b) => b.setAttribute('aria-pressed', String(b === boton)));
+      platos.forEach((plato) => {
+        const coincide = filtro === 'todos' || plato.dataset.cat === filtro;
+        plato.toggleAttribute('data-oculto', !coincide);
+        if (coincide) plato.classList.add('plato--visible');
+      });
+    });
+  });
+
+  /* ------------------------------------------
      Ventana de detalle de plato (<dialog>)
      Cierra con la X, con Escape o tocando fuera.
      ------------------------------------------ */
@@ -147,13 +163,98 @@
     pedir: $('#detalle-pedir')
   };
 
+  /* ---- Visor de fotos (flechas, puntos, teclado y deslizar) ---- */
+  const visor = {
+    caja: $('#detalle-foto'),
+    prev: $('#visor-prev'),
+    next: $('#visor-next'),
+    puntos: $('#visor-puntos'),
+    fotos: [],
+    i: 0,
+    token: 0
+  };
+
+  function pintarPuntos() {
+    visor.puntos.innerHTML = '';
+    visor.fotos.forEach((_, n) => {
+      const p = document.createElement('button');
+      p.type = 'button';
+      p.className = 'visor__punto' + (n === visor.i ? ' visor__punto--activo' : '');
+      p.setAttribute('aria-label', `Ver foto ${n + 1} de ${visor.fotos.length}`);
+      p.addEventListener('click', () => irAFoto(n));
+      visor.puntos.appendChild(p);
+    });
+    visor.caja.classList.toggle('detalle__foto--una', visor.fotos.length < 2);
+  }
+
+  function irAFoto(n) {
+    const total = visor.fotos.length;
+    if (!total) return;
+    visor.i = (n + total) % total;
+    const img = campos.img;
+    img.classList.add('cambiando');
+    setTimeout(() => {
+      img.src = visor.fotos[visor.i];
+      img.classList.remove('cambiando');
+    }, sinMovimiento ? 0 : 120);
+    $$('.visor__punto', visor.puntos).forEach((p, n2) => p.classList.toggle('visor__punto--activo', n2 === visor.i));
+  }
+
+  // Solo se suman las fotos que realmente existen
+  function cargarFotos(candidatas) {
+    const token = ++visor.token;
+    visor.fotos = [];
+    visor.i = 0;
+    campos.img.removeAttribute('src');
+    pintarPuntos();
+    candidatas.forEach((url) => {
+      const prueba = new Image();
+      prueba.onload = () => {
+        if (token !== visor.token) return;
+        const actual = visor.fotos[visor.i];
+        visor.fotos.push(url);
+        visor.fotos.sort((a, b) => candidatas.indexOf(a) - candidatas.indexOf(b));
+        if (actual === undefined) { visor.i = 0; campos.img.src = visor.fotos[0]; }
+        else visor.i = visor.fotos.indexOf(actual);
+        pintarPuntos();
+      };
+      prueba.src = url;
+    });
+  }
+
+  visor.prev.addEventListener('click', () => irAFoto(visor.i - 1));
+  visor.next.addEventListener('click', () => irAFoto(visor.i + 1));
+  ventana.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') irAFoto(visor.i - 1);
+    if (e.key === 'ArrowRight') irAFoto(visor.i + 1);
+  });
+  let inicioX = null;
+  visor.caja.addEventListener('pointerdown', (e) => { inicioX = e.clientX; });
+  visor.caja.addEventListener('pointerup', (e) => {
+    if (inicioX === null) return;
+    const dx = e.clientX - inicioX;
+    inicioX = null;
+    if (Math.abs(dx) > 40) irAFoto(visor.i + (dx < 0 ? 1 : -1));
+  });
+
+  /* Si la foto de una tarjeta no existe, se muestra un recuadro con el nombre */
+  $$('.plato__foto').forEach((caja) => {
+    const img = $('img', caja);
+    caja.dataset.nombre = $('.plato__titulo', caja.closest('.plato')).textContent.trim();
+    const falla = () => caja.classList.add('plato__foto--vacia');
+    img.addEventListener('error', falla);
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute('loading') !== 'lazy') falla();
+  });
+
   function abrirDetalle(plato, boton) {
     const foto = $('img', plato);
     const titulo = $('.plato__titulo', plato).textContent.trim();
     const precio = $('.plato__precio', plato).textContent.trim();
 
-    campos.img.src = foto.currentSrc || foto.src;
+    const primera = foto.currentSrc || foto.src;
+    const extras = (boton.dataset.extras || '').split('|').map((s) => s.trim()).filter(Boolean);
     campos.img.alt = foto.alt;
+    cargarFotos([primera, ...extras]);
     campos.cat.textContent = $('.plato__cat', plato).textContent;
     campos.titulo.textContent = titulo;
     campos.precio.textContent = precio;
